@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
     'lib/slack_poster.rb',
     'lib/slack_poster/network_request.rb'
   ]
+  s.executables << 'slack_poster'
   s.require_paths = ['lib']
   s.licenses    = ['MIT']
   s.summary     = 'Ruby script to send message to slack'
