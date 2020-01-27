@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |s|
-  s.name = 'slack_integrator'
+  s.name = 'slack_poster'
   s.version = '0.0.1'
   s.date = '2020-01-24'
   s.files = [
-    'lib/slack_integrator.rb',
-    'lib/slack_integrator/network_request.rb'
+    'lib/slack_poster.rb',
+    'lib/slack_poster/network_request.rb'
   ]
   s.require_paths = ['lib']
   s.licenses    = ['MIT']
   s.summary     = 'Ruby script to send message to slack'
   s.description = <<-DESC
-  slack_integrator is simple ruby script to send message to slack
+  slack_poster is simple ruby script to send message to slack
   DESC
   s.authors     = ['Alwi Alfiansyah']
   s.email       = ['alwi.alfiansyah@bukalapak.com']

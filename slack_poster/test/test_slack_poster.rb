@@ -3,9 +3,9 @@
 # frozen_string_literal: true
 
 require_relative 'test_helper.rb'
-require_relative '../lib/slack_integrator.rb'
+require_relative '../lib/slack_poster.rb'
 
-class SlackIntegratorTest < Test::Unit::TestCase
+class SlackPosterTest < Test::Unit::TestCase
   def test_post_message
     message = 'Hello, world!'
     channel_id = 'CHANNEL_ID'
@@ -13,9 +13,9 @@ class SlackIntegratorTest < Test::Unit::TestCase
     params = { token: slack_token }
 
     network_request = MockedNetworkRequest.new
-    slack_integrator = SlackIntegrator.new(network_request)
+    slack_poster = SlackPoster.new(network_request)
 
-    slack_integrator.post_message(channel_id, message, slack_token)
+    slack_poster.post_message(channel_id, message, slack_token)
 
     expected_uri = URI.parse('https://slack.com/api/chat.postMessage')
     expected_uri.query = URI.encode_www_form(params)
@@ -29,9 +29,9 @@ class SlackIntegratorTest < Test::Unit::TestCase
     message = 'Some text %0A with %0A new line'
 
     network_request = MockedNetworkRequest.new
-    slack_integrator = SlackIntegrator.new(network_request)
+    slack_poster = SlackPoster.new(network_request)
 
-    message_result = slack_integrator.escape_newline(message)
+    message_result = slack_poster.escape_newline(message)
 
     expected_message = "Some text \n with \n new line"
     assert_equal(expected_message, message_result)

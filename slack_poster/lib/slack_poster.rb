@@ -2,10 +2,10 @@
 
 # frozen_string_literal: true
 
-require_relative 'slack_integrator/network_request.rb'
+require_relative 'slack_poster/network_request.rb'
 
 # Send message and upload file to slack
-class SlackIntegrator
+class SlackPoster
   URL = 'https://slack.com/api/'
 
   def initialize(network_request)
